@@ -21,11 +21,7 @@ assessmentButton.onclick = () => {
     // 名前が空の時は処理を終了する
     return;
   }
-userNameInput.onkeydown = event => {
-  if (event.key === 'Enter') {
-    assessmentButton.onclick();
-  }
-};
+
 
   // 診断結果表示エリアの作成
   removeAllChildren(resultDivided);
@@ -55,6 +51,12 @@ userNameInput.onkeydown = event => {
   const script = document.createElement('script');
   script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
   tweetDivided.appendChild(script);
+};
+
+userNameInput.onkeydown = event => {
+  if (event.key === 'Enter') {
+    assessmentButton.onclick();
+  }
 };
 
 const answers = [
